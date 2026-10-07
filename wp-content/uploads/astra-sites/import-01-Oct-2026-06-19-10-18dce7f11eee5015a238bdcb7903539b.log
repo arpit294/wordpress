@@ -1,0 +1,138 @@
+
+[06:26:21 UTC] [INFO] Checking if plugin directory clearing is needed
+[07:18:57 UTC] [SUCCESS] {"required_plugins":{"active":[],"inactive":[],"notinstalled":[{"slug":"spectra-blocks","init":"spectra-blocks\/spectra-blocks.php","name":"Spectra Blocks","action":"http:\/\/localhost\/wordpress\/wp-admin\/update.php?action=install-plugin&plugin=spectra-blocks&_wpnonce=dd71048f70"},{"slug":"sureforms","init":"sureforms\/sureforms.php","name":"SureForms","action":"http:\/\/localhost\/wordpress\/wp-admin\/update.php?action=install-plugin&plugin=sureforms&_wpnonce=759b9ab4f0"}]},"third_party_required_plugins":[],"update_avilable_plugins":[],"incompatible_plugins":[],"error":false} | Context: {"required_plugins":{"active":[],"inactive":[],"notinstalled":[{"slug":"spectra-blocks","init":"spectra-blocks\/spectra-blocks.php","name":"Spectra Blocks","action":"http:\/\/localhost\/wordpress\/wp-admin\/update.php?action=install-plugin&plugin=spectra-blocks&_wpnonce=dd71048f70"},{"slug":"sureforms","init":"sureforms\/sureforms.php","name":"SureForms","action":"http:\/\/localhost\/wordpress\/wp-admin\/update.php?action=install-plugin&plugin=sureforms&_wpnonce=759b9ab4f0"}]},"third_party_required_plugins":[],"update_avilable_plugins":[],"incompatible_plugins":[],"error":false}
+[07:18:58 UTC] [SUCCESS] {"permissions":{"is_readable":true,"is_writable":true,"is_wp_filesystem":true},"directory":"C:\\xampp\\htdocs\\wordpress\/wp-content\/uploads"} | Context: {"permissions":{"is_readable":true,"is_writable":true,"is_wp_filesystem":true},"directory":"C:\\xampp\\htdocs\\wordpress\/wp-content\/uploads"}
+[07:19:09 UTC] [SUCCESS] {"required_plugins":{"active":[],"inactive":[],"notinstalled":[{"slug":"spectra-blocks","init":"spectra-blocks\/spectra-blocks.php","name":"Spectra Blocks","action":"http:\/\/localhost\/wordpress\/wp-admin\/update.php?action=install-plugin&plugin=spectra-blocks&_wpnonce=dd71048f70"},{"slug":"sureforms","init":"sureforms\/sureforms.php","name":"SureForms","action":"http:\/\/localhost\/wordpress\/wp-admin\/update.php?action=install-plugin&plugin=sureforms&_wpnonce=759b9ab4f0"},{"name":"SureRank","slug":"surerank","init":"surerank\/surerank.php","optional":true,"action":"http:\/\/localhost\/wordpress\/wp-admin\/update.php?action=install-plugin&plugin=surerank&_wpnonce=0611702851"},{"name":"SureCookie","slug":"surecookie","init":"surecookie\/surecookie.php","optional":true,"action":"http:\/\/localhost\/wordpress\/wp-admin\/update.php?action=install-plugin&plugin=surecookie&_wpnonce=82ac874d82"}]},"third_party_required_plugins":[],"update_avilable_plugins":[],"incompatible_plugins":[],"error":false} | Context: {"required_plugins":{"active":[],"inactive":[],"notinstalled":[{"slug":"spectra-blocks","init":"spectra-blocks\/spectra-blocks.php","name":"Spectra Blocks","action":"http:\/\/localhost\/wordpress\/wp-admin\/update.php?action=install-plugin&plugin=spectra-blocks&_wpnonce=dd71048f70"},{"slug":"sureforms","init":"sureforms\/sureforms.php","name":"SureForms","action":"http:\/\/localhost\/wordpress\/wp-admin\/update.php?action=install-plugin&plugin=sureforms&_wpnonce=759b9ab4f0"},{"name":"SureRank","slug":"surerank","init":"surerank\/surerank.php","optional":true,"action":"http:\/\/localhost\/wordpress\/wp-admin\/update.php?action=install-plugin&plugin=surerank&_wpnonce=0611702851"},{"name":"SureCookie","slug":"surecookie","init":"surecookie\/surecookie.php","optional":true,"action":"http:\/\/localhost\/wordpress\/wp-admin\/update.php?action=install-plugin&plugin=surecookie&_wpnonce=82ac874d82"}]},"third_party_required_plugins":[],"update_avilable_plugins":[],"incompatible_plugins":[],"error":false}
+[07:19:16 UTC] [INFO] Starting import process | Context: {"template_type":"classic","uuid":""}
+[07:19:16 UTC] [INFO] Started Import Process
+[07:19:16 UTC] [INFO] # System Details: 
+[07:19:16 UTC] [INFO] Debug Mode 		: Disabled
+[07:19:16 UTC] [INFO] Operating System 	: WINNT
+[07:19:16 UTC] [INFO] Software 		: Apache/2.4.58 (Win64) OpenSSL/3.1.3 PHP/8.2.12
+[07:19:16 UTC] [INFO] MySQL version 		: 10.4.32
+[07:19:16 UTC] [INFO] XML Reader 		: Yes
+[07:19:16 UTC] [INFO] PHP Version 		: 8.2.12
+[07:19:16 UTC] [INFO] PHP Max Input Vars 	: 1000
+[07:19:16 UTC] [INFO] PHP Max Post Size 	: 40M
+[07:19:16 UTC] [INFO] PHP Extension GD 	: Yes
+[07:19:16 UTC] [INFO] PHP Max Execution Time 	: 120
+[07:19:16 UTC] [INFO] Max Upload Size 	: 40 MB
+[07:19:16 UTC] [INFO] Memory Limit 		: Current memory limit 40M. We recommend setting memory to at least 64M.
+[07:19:16 UTC] [INFO] Timezone 		: 0
+[07:19:16 UTC] [INFO] 
+-----
+
+[07:19:16 UTC] [INFO] Importing Started! - 07:19:16 UTC
+[07:19:16 UTC] [INFO] ---
+
+[07:19:16 UTC] [INFO] WHY IMPORT PROCESS CAN FAIL? READ THIS - 
+[07:19:16 UTC] [INFO] https://wpastra.com/docs/?p=1314&utm_source=demo-import-panel&utm_campaign=import-error&utm_medium=wp-dashboard
+
+[07:19:16 UTC] [INFO] ---
+
+[07:19:16 UTC] [SUCCESS] Import process start flag set successfully | Context: {"template_type":"classic"}
+[07:19:16 UTC] [INFO] Image subsizes deferral enabled for import
+[07:19:16 UTC] [INFO] Image subsizes deferral enabled for import
+[07:19:17 UTC] [INFO] Image subsizes deferral enabled for import
+[07:19:19 UTC] [INFO] Image subsizes deferral enabled for import
+[07:19:17 UTC] [INFO] Checking if plugin directory clearing is needed
+[07:19:17 UTC] [INFO] Plugin install clear directory enabled - Will clear destination directory
+[07:19:17 UTC] [INFO] Plugin install clear directory options returned
+[07:19:31 UTC] [INFO] Image subsizes deferral enabled for import
+[07:19:31 UTC] [INFO] Image subsizes deferral enabled for import
+[07:19:32 UTC] [INFO] Image subsizes deferral enabled for import
+[07:19:32 UTC] [INFO] Image subsizes deferral enabled for import
+[07:19:32 UTC] [SUCCESS] Plugin Activated | Context: {"success":true,"status":"activated","message":"Plugin Activated"}
+[07:19:45 UTC] [INFO] Image subsizes deferral enabled for import
+[07:19:33 UTC] [INFO] Checking if plugin directory clearing is needed
+[07:19:33 UTC] [INFO] Plugin install clear directory enabled - Will clear destination directory
+[07:19:33 UTC] [INFO] Plugin install clear directory options returned
+[07:19:47 UTC] [INFO] Image subsizes deferral enabled for import
+[07:19:47 UTC] [INFO] Image subsizes deferral enabled for import
+[07:19:47 UTC] [INFO] Image subsizes deferral enabled for import
+[07:19:48 UTC] [INFO] Image subsizes deferral enabled for import
+[07:19:47 UTC] [SUCCESS] Plugin Activated | Context: {"success":true,"status":"activated","message":"Plugin Activated"}
+[07:19:49 UTC] [INFO] Image subsizes deferral enabled for import
+[07:19:50 UTC] [INFO] Image subsizes deferral enabled for import
+[07:19:48 UTC] [INFO] Checking if plugin directory clearing is needed
+[07:19:48 UTC] [INFO] Plugin install clear directory enabled - Will clear destination directory
+[07:19:48 UTC] [INFO] Plugin install clear directory options returned
+[07:20:00 UTC] [INFO] Image subsizes deferral enabled for import
+[07:20:00 UTC] [INFO] Image subsizes deferral enabled for import
+[07:20:01 UTC] [SUCCESS] Plugin Activated | Context: {"success":true,"status":"activated","message":"Plugin Activated"}
+[07:20:01 UTC] [INFO] Checking if plugin directory clearing is needed
+[07:20:01 UTC] [INFO] Plugin install clear directory enabled - Will clear destination directory
+[07:20:01 UTC] [INFO] Plugin install clear directory options returned
+[07:20:10 UTC] [INFO] Image subsizes deferral enabled for import
+[07:20:10 UTC] [INFO] Image subsizes deferral enabled for import
+[07:20:10 UTC] [INFO] Image subsizes deferral enabled for import
+[07:20:11 UTC] [SUCCESS] Plugin Activated | Context: {"success":true,"status":"activated","message":"Plugin Activated"}
+[07:20:14 UTC] [INFO] Image subsizes deferral enabled for import
+[07:20:14 UTC] [INFO] All required plugins verified successfully.
+[07:20:15 UTC] [INFO] Image subsizes deferral enabled for import
+[07:20:21 UTC] [INFO] Image subsizes deferral enabled for import
+[07:20:24 UTC] [INFO] ---
+
+[07:20:24 UTC] [INFO] Starting import customizer settings
+[07:20:24 UTC] [INFO] Importing customizer settings | Context: {"settings_count":0}
+[07:20:24 UTC] [INFO] Fetched customizer data from site data | Context: {"settings_count":2}
+[07:20:24 UTC] [INFO] Starting customizer settings import | Context: {"settings_count":2}
+[07:20:24 UTC] [INFO] Validating customizer data keys | Context: {"keys":["astra-settings","custom-css"]}
+[07:20:24 UTC] [INFO] Old customizer data backed up
+[07:20:24 UTC] [SUCCESS] Astra theme settings updated | Context: {"option_key":"astra-settings"}
+[07:20:24 UTC] [SUCCESS] Custom CSS updated | Context: {"option_key":"custom-css"}
+[07:20:24 UTC] [SUCCESS] Customizer settings import completed successfully
+[07:20:24 UTC] [SUCCESS] Customizer settings imported successfully
+[07:20:27 UTC] [INFO] Image subsizes deferral enabled for import
+[07:20:27 UTC] [INFO] Image subsizes deferral enabled for import
+[07:20:29 UTC] [INFO] Image subsizes deferral enabled for import
+[07:20:29 UTC] [INFO] Image subsizes deferral enabled for import
+[07:20:12 UTC] [INFO] Checking if plugin directory clearing is needed
+[07:20:12 UTC] [INFO] Plugin install clear directory enabled - Will clear destination directory
+[07:20:12 UTC] [INFO] Plugin install clear directory options returned
+[07:20:30 UTC] [INFO] Image subsizes deferral enabled for import
+[07:20:30 UTC] [INFO] Image subsizes deferral enabled for import
+[07:20:31 UTC] [SUCCESS] Plugin Activated | Context: {"success":true,"status":"activated","message":"Plugin Activated"}
+[07:20:31 UTC] [INFO] Image subsizes deferral enabled for import
+[07:20:32 UTC] [INFO] Image subsizes deferral enabled for import
+[07:20:34 UTC] [INFO] Image subsizes deferral enabled for import
+[07:20:34 UTC] [INFO] Image subsizes deferral enabled for import
+[07:20:35 UTC] [INFO] Starting import process | Context: {"template_type":"classic","uuid":""}
+[07:20:35 UTC] [INFO] Started Import Process
+[07:20:35 UTC] [INFO] # System Details: 
+[07:20:35 UTC] [INFO] Debug Mode 		: Disabled
+[07:20:35 UTC] [INFO] Operating System 	: WINNT
+[07:20:35 UTC] [INFO] Software 		: Apache/2.4.58 (Win64) OpenSSL/3.1.3 PHP/8.2.12
+[07:20:35 UTC] [INFO] MySQL version 		: 10.4.32
+[07:20:35 UTC] [INFO] XML Reader 		: Yes
+[07:20:35 UTC] [INFO] PHP Version 		: 8.2.12
+[07:20:35 UTC] [INFO] PHP Max Input Vars 	: 1000
+[07:20:35 UTC] [INFO] PHP Max Post Size 	: 40M
+[07:20:35 UTC] [INFO] PHP Extension GD 	: Yes
+[07:20:35 UTC] [INFO] PHP Max Execution Time 	: 300
+[07:20:35 UTC] [INFO] Max Upload Size 	: 40 MB
+[07:20:35 UTC] [INFO] Memory Limit 		: Current memory limit 40M. We recommend setting memory to at least 64M.
+[07:20:35 UTC] [INFO] Timezone 		: 0
+[07:20:35 UTC] [INFO] 
+-----
+
+[07:20:35 UTC] [INFO] Importing Started! - 07:20:35 UTC
+[07:20:35 UTC] [INFO] ---
+
+[07:20:35 UTC] [INFO] WHY IMPORT PROCESS CAN FAIL? READ THIS - 
+[07:20:35 UTC] [INFO] https://wpastra.com/docs/?p=1314&utm_source=demo-import-panel&utm_campaign=import-error&utm_medium=wp-dashboard
+
+[07:20:35 UTC] [INFO] ---
+
+[07:20:35 UTC] [SUCCESS] Import process start flag set successfully | Context: {"template_type":"classic"}
+[07:20:35 UTC] [INFO] Image subsizes deferral enabled for import
+[07:20:35 UTC] [INFO] Image subsizes deferral enabled for import
+[07:20:35 UTC] [SUCCESS] {"required_plugins":{"active":[{"slug":"spectra-blocks","init":"spectra-blocks\/spectra-blocks.php","name":"Spectra Blocks"},{"slug":"sureforms","init":"sureforms\/sureforms.php","name":"SureForms"},{"name":"SureRank","slug":"surerank","init":"surerank\/surerank.php","optional":true},{"name":"SureCookie","slug":"surecookie","init":"surecookie\/surecookie.php","optional":true}],"inactive":[],"notinstalled":[]},"third_party_required_plugins":[],"update_avilable_plugins":[],"incompatible_plugins":[],"error":false} | Context: {"required_plugins":{"active":[{"slug":"spectra-blocks","init":"spectra-blocks\/spectra-blocks.php","name":"Spectra Blocks"},{"slug":"sureforms","init":"sureforms\/sureforms.php","name":"SureForms"},{"name":"SureRank","slug":"surerank","init":"surerank\/surerank.php","optional":true},{"name":"SureCookie","slug":"surecookie","init":"surecookie\/surecookie.php","optional":true}],"inactive":[],"notinstalled":[]},"third_party_required_plugins":[],"update_avilable_plugins":[],"incompatible_plugins":[],"error":false}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+[07:41:09 UTC] [INFO] Image subsizes deferral enabled for import
+[07:41:09 UTC] [INFO] Image subsizes deferral enabled for import
+[07:41:12 UTC] [INFO] Image subsizes deferral enabled for import
+[07:41:21 UTC] [INFO] Image subsizes deferral enabled for import
+[07:41:23 UTC] [INFO] Image subsizes deferral enabled for import
+[07:41:25 UTC] [INFO] Image subsizes deferral enabled for import
+[07:41:25 UTC] [INFO] Image subsizes deferral enabled for import
+[07:41:27 UTC] [INFO] Import process completed. Cleaning up log file option.
