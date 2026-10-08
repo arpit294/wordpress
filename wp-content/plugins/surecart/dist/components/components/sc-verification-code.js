@@ -1,0 +1,1 @@
+import{S as ScVerificationCode$1,d as defineCustomElement$1}from"./sc-verification-code2.js";const ScVerificationCode=ScVerificationCode$1,defineCustomElement=defineCustomElement$1;export{ScVerificationCode,defineCustomElement};

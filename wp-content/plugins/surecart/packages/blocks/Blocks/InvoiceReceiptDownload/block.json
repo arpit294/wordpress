@@ -1,0 +1,19 @@
+{
+	"name": "surecart/invoice-receipt-download",
+	"title": "Receipt Download",
+	"apiVersion": 3,
+	"description": "Displays the receipt download link for a paid invoice.",
+	"category": "surecart",
+	"ancestor": ["surecart/invoice-details"],
+	"keywords": ["checkout", "engine", "invoice", "download", "receipt"],
+	"textdomain": "surecart",
+	"supports": {
+		"reusable": false,
+		"html": false
+	},
+	"attributes": {
+		"text": {
+			"type": "string"
+		}
+	}
+}

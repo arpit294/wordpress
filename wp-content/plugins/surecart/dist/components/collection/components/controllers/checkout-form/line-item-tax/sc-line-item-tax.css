@@ -1,0 +1,8 @@
+/**
+ * @prop --sc-line-item-tax-gap: Space between stacked tax rows. Containers that
+ * space their rows differently from --sc-form-row-spacing (e.g. sc-order-summary) set this.
+ */
+:host {
+  display: grid;
+  gap: var(--sc-line-item-tax-gap, var(--sc-form-row-spacing, 0.75em));
+}

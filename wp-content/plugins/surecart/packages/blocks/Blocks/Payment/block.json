@@ -1,0 +1,31 @@
+{
+	"apiVersion": 3,
+	"name": "surecart/payment",
+	"title": "Payment",
+	"description": "Display payment options",
+	"category": "surecart",
+	"keywords": ["credit", "card", "paypal", "stripe"],
+	"textdomain": "surecart",
+	"ancestor": ["surecart/form"],
+	"supports": {
+		"reusable": false,
+		"html": false,
+		"multiple": false
+	},
+	"attributes": {
+		"disabled_methods": {
+			"type": "array"
+		},
+		"secure_notice": {
+			"type": "string"
+		},
+		"label": {
+			"type": "string"
+		},
+		"default_processor": {
+			"type": "string",
+			"default": "stripe"
+		}
+	},
+	"usesContext": ["surecart/form/mode"]
+}

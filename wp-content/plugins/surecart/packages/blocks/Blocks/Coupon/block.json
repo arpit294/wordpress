@@ -1,0 +1,37 @@
+{
+	"apiVersion": 3,
+	"name": "surecart/coupon",
+	"title": "Coupon",
+	"description": "Display a coupon form.",
+	"category": "surecart",
+	"keywords": ["coupon", "promo"],
+	"textdomain": "surecart",
+	"ancestor": ["surecart/form", "surecart/totals"],
+	"supports": {
+		"reusable": false,
+		"html": false,
+		"multiple": false,
+		"order-summary": true
+	},
+	"attributes": {
+		"lock": {
+			"remove": true
+		},
+		"text": {
+			"type": "string"
+		},
+		"button_text": {
+			"type": "string"
+		},
+		"placeholder": {
+			"type": "string"
+		},
+		"collapsed": {
+			"type": "boolean",
+			"default": true
+		},
+		"disabled": {
+			"type": "boolean"
+		}
+	}
+}

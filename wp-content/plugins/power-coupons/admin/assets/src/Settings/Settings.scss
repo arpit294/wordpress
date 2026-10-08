@@ -1,0 +1,434 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	// No @font-face ships with the plugin and Figtree is not a WordPress admin
+	// default, so this needs a real stack behind it — otherwise the fallback is
+	// whatever the browser picks, which is rarely what the rest of the admin
+	// uses.
+	--heading-font-family: "Figtree", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, sans-serif;
+	--heading-font-style: normal;
+}
+
+// Full-height admin layout without viewport math.
+//
+// The usual approach across our admin apps is `calc(100dvh - 96px)`, where 96px
+// is the WP admin bar plus our own topbar. That constant is wrong the moment any
+// other plugin injects something above the app through `in_admin_header` — the
+// app then overflows the viewport and its bottom controls become unreachable.
+// See brainstormforce/force-ui#487.
+//
+// Instead, turn WordPress's own containers into a flex column on this screen
+// only and let the app claim whatever space is left. Injected banners become
+// ordinary flex items: they take their natural height, the app takes the rest,
+// and dismissing one reflows with no JS. The single remaining constant is
+// `--wp-admin--admin-bar--height`, which WP core owns and keeps correct at both
+// 32px and the 46px mobile size.
+body.toplevel_page_power_coupons_settings {
+	// Deliberately no `padding: 0` here: WP puts a 20px left padding on
+	// #wpcontent that the app's negative margins already account for.
+	#wpcontent,
+	#wpbody,
+	#wpbody-content {
+		display: flex;
+		flex-direction: column;
+	}
+
+	#wpcontent {
+		min-height: calc(100vh - var(--wp-admin--admin-bar--height, 32px));
+	}
+
+	// Each level has to pass the height down, or only #wpcontent has it and the
+	// app still sizes to its own content. `min-height: 0` stops the default
+	// `min-height: auto` on a flex item from refusing to shrink below content.
+	#wpbody,
+	#wpbody-content {
+		flex: 1 1 auto;
+		min-height: 0;
+	}
+
+	#power-coupons-settings {
+		display: flex;
+		flex-direction: column;
+		flex: 1 1 auto;
+		min-height: 0;
+
+		> form {
+			display: flex;
+			flex-direction: column;
+			flex: 1 1 auto;
+			min-height: 0;
+		}
+	}
+}
+
+// The sidebar nav item is a flex row and its icon sits next to a label that
+// takes the remaining width. Without this the icon absorbs the squeeze and the
+// glyph renders narrower than it is tall. It lives here rather than as a
+// wrapper element because Force UI targets the icon with `[&>svg]` rules that
+// only match a direct child.
+.mcw-sidebar li > svg {
+	flex-shrink: 0;
+}
+
+.power-coupons-coupon-code {
+	text-transform: uppercase;
+	font-size: 12px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	font-weight: 600;
+	padding: 6px 8px;
+}
+
+html.wp-toolbar.power-coupon-modal-open {
+	padding: 0;
+
+	#wpcontent {
+		margin: 0;
+		padding: 0;
+	}
+
+	#wpadminbar,
+	#adminmenumain {
+		display:none;
+	}
+
+	.bogo-radio-button-wrapper {
+		label.cursor-pointer {
+			> div {
+				margin-left: 24px !important;
+			}
+
+			+ label {
+				left: 12px !important;
+			}
+		}
+	}
+}
+
+.power-coupons-bogo-form-tab {
+	span {
+		&.flex.items-center.gap-1 {
+			font-weight: 500;
+			font-size: 16px;
+			line-height: 24px;
+			text-align: center;
+			vertical-align: middle;
+		}
+		&:nth-child(2) {
+			font-weight: 600;
+			font-size: 16px;
+			line-height: 24px;
+			text-align: center;
+			vertical-align: middle;
+		}
+	}
+
+	// Hide framer-motion's animated underline — its layoutId animation jitters
+	// when panel content changes simultaneously with the active tab switch.
+	> span.absolute {
+		display: none !important;
+	}
+
+	// Static underline for the active tab (replaces the framer-motion one).
+	&.text-text-primary::after {
+		content: '';
+		position: absolute;
+		right: 0;
+		left: 0;
+		bottom: -1px;
+		height: 1px;
+		background-color: theme('colors.wpcolor');
+	}
+}
+
+@layer components {
+	#wpwrap {
+
+		@apply bg-background-secondary;
+	}
+
+	#wpbody-content > .notice,
+	#wpbody-content > .error {
+		display: none !important;
+	}
+
+	#wpbody-content {
+		padding-bottom: 0;
+	}
+
+	#power-coupons-settings {
+		font-family: var( --heading-font-family );
+	}
+
+	.power_coupons-toggle-field {
+		input {
+			box-shadow: none;
+			border: 0 !important;
+		}
+		input:focus {
+			--tw-ring-opacity: 0 !important;
+		}
+	}
+
+	.power_coupons-color-field {
+		align-items: center;
+		line-height: 1;
+	}
+
+	.power_coupons-color-field .power_coupons-colorpicker-swatch-wrap {
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+	}
+
+	.power_coupons-color-field .power_coupons-colorpicker-swatch {
+		padding: 0;
+		background: theme('colors.field-primary-background');
+		display: inline-block;
+		margin: 0;
+		border-right: 1px solid theme('colors.border-subtle');
+		box-shadow: inset 0 0 0 3px theme('colors.background-primary');
+	}
+
+	.power_coupons-color-field .power_coupons-color-picker-popover {
+		position: absolute;
+		z-index: 9999;
+		margin: 8px 0;
+		right: 30px;
+	}
+
+	.power_coupons-color-field .power_coupons-color-picker-cover {
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	}
+
+	.power_coupons-color-field {
+		.components-input-control__input,
+		.components-select-control__input {
+			font-family: var( --heading-font-family ) !important;
+		}
+	}
+
+	.power_coupons-color-field .power_coupons-field-data-content .power_coupons-colorpicker-selector {
+		display: flex;
+		align-items: center;
+	}
+
+	.power_coupons-color-field .power_coupons-field-data-content .power_coupons-colorpicker-swatch-wrap {
+		border: 1px solid theme('colors.border-subtle');
+		border-radius: 2px;
+		background: theme('colors.background-primary');
+		color: theme('colors.text-secondary');
+	}
+
+	.power_coupons-color-field .power_coupons-field-data-content .power_coupons-colorpicker-label {
+		font-weight: 400;
+		// Was 5px/7px with a 13px font and 13px line-height — the only spacing
+		// off the 4px scale and the only type with leading of exactly 1.0.
+		font-size: 14px;
+		line-height: 20px;
+		padding: 6px 8px;
+	}
+
+	.power_coupons-color-field .power_coupons-field-data-content .power_coupons-colorpicker-reset {
+		padding: 6px;
+		cursor: pointer;
+		background: none;
+		border: none;
+	}
+
+	.power_coupons-color-field .power_coupons-color-picker {
+		position: relative;
+	}
+
+	.power_coupons-color-field .power_coupons-color-picker input {
+		margin: 0;
+	}
+
+	.power_coupons-color-field .power_coupons-color-picker input[id^="rc-editable-input-"] {
+		width: 100% !important;
+	}
+
+	.power_coupons-input-field-wrapper input.w-28 {
+
+		@apply rounded-md;
+	}
+
+	.power_coupons-input-field-wrapper input {
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+		border: 1px solid;
+		outline: none;
+
+
+		@apply border-gray-300;
+	}
+
+	.power_coupons-input-field-wrapper input:focus {
+
+		@apply border-gray-300;
+		box-shadow: none;
+	}
+
+	.power_coupons-animate-spin-reverse {
+		animation: power_coupons-reverse-spin 1s ease infinite;
+
+		@keyframes power_coupons-reverse-spin {
+			from {
+				transform: rotate( 360deg );
+			}
+			to {
+				transform: rotate( 0deg );
+			}
+		}
+	}
+
+	.power_coupons-settings {
+		a.power_coupons-settings--article-link,
+		a:hover,
+		a:active {
+			color: theme('colors.wpcolor');
+			border-color: theme('colors.wpcolor');
+		}
+	}
+
+	.power_coupons-license-key {
+		input {
+			height: 40px;
+		}
+	}
+}
+
+// Hide WordPress admin footer on Power Coupons settings and onboarding screens.
+.toplevel_page_power_coupons_settings #wpfooter {
+	display: none !important;
+}
+
+/* START: Fix for the admin app sidebar height styling issue. */
+#power_coupons-settings .mcw-sidebar::after {
+	content: "";
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 420px;
+	height: 100vh;
+	background: theme('colors.background-primary');
+	z-index: -1;
+}
+
+@media ( max-width: 1024px ) {
+	#power_coupons-settings .mcw-sidebar::after {
+		width: 225px;
+	}
+}
+
+@media ( max-width: 960px ) {
+	#power_coupons-settings .mcw-sidebar::after {
+		width: 100px;
+	}
+}
+
+@media ( max-width: 782px ) {
+	#power_coupons-settings .mcw-sidebar::after {
+		width: 75px;
+	}
+}
+/* END: Fix for the admin app sidebar height styling issue. */
+
+// Fix checkbox unchecked border: force-ui uses border-border-strong, which is the brand orange
+// in our theme, but Figma specifies gray for unchecked checkboxes.
+// :not(:checked) ensures the override only applies in unchecked state so the theme
+// orange color (checked:border-border-interactive) still shows when checked.
+:is(#power-coupons-settings) input[type="checkbox"].border-border-strong:not(:checked) {
+	border-color: theme('colors.field-placeholder') !important;
+}
+
+// Match Figma: reduce table data cell vertical padding from py-3.5 (14px) to 10px per side.
+:is(#power-coupons-settings) table td {
+	padding-top: 10px !important;
+	padding-bottom: 10px !important;
+}
+
+// Override force-ui rounded Tabs to match the reference pill style (orange active state).
+// The .pc-tabs-rounded wrapper is applied to Tabs.Group in Points.js.
+:is(#power-coupons-settings) .pc-tabs-rounded {
+	background-color: theme('colors.background-primary') !important;
+	padding: 0 !important;
+
+	// Active tab — orange tint background, orange text, orange outline.
+	> button.bg-background-primary {
+		background-color: theme('colors.wphovercolorfaded') !important;
+		color: theme('colors.wphovercolor') !important;
+		outline: 1px solid theme('colors.wpcolor') !important;
+		box-shadow: 0 1px 2px rgb(0 0 0 / 0.05) !important;
+
+		span {
+			color: inherit !important;
+		}
+	}
+
+	// Inactive tab — hover to orange text.
+	> button:not(.bg-background-primary) {
+		&:hover {
+			color: theme('colors.wphovercolor') !important;
+
+			span {
+				color: inherit !important;
+			}
+		}
+	}
+}
+
+// CSS-only tooltip for campaign modal fields (avoids z-index issues with force-ui Tooltip in modal).
+.pc-field-tooltip {
+	&::after {
+		content: attr(data-tip);
+		position: absolute;
+		bottom: calc(100% + 6px);
+		left: 50%;
+		transform: translateX(-50%);
+		background: theme('colors.tooltip-background-dark');
+		color: theme('colors.text-inverse');
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 1.4;
+		padding: 6px 10px;
+		border-radius: 6px;
+		white-space: normal;
+		width: max-content;
+		max-width: 240px;
+		pointer-events: none;
+		opacity: 0;
+		transition: opacity 0.15s;
+		z-index: 10;
+		box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		bottom: calc(100% + 2px);
+		left: 50%;
+		transform: translateX(-50%);
+		border: 4px solid transparent;
+		border-top-color: theme('colors.tooltip-background-dark');
+		pointer-events: none;
+		opacity: 0;
+		transition: opacity 0.15s;
+		z-index: 10;
+	}
+
+	&:hover::after,
+	&:hover::before,
+	&:focus::after,
+	&:focus::before {
+		opacity: 1;
+	}
+}
+

@@ -1,0 +1,1 @@
+export const getGeoCoordinates=async()=>{try{return(null===navigator||void 0===navigator?void 0:navigator.geolocation)?await new Promise((t=>{navigator.geolocation.getCurrentPosition((({coords:o})=>t({latitude:o.latitude,longitude:o.longitude})),(()=>t(null)),{maximumAge:9e5,timeout:1e4})})):null}catch{return null}};

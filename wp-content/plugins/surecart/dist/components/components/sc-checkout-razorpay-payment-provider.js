@@ -1,0 +1,1 @@
+import{S as ScCheckoutRazorpayPaymentProvider$1,d as defineCustomElement$1}from"./sc-checkout-razorpay-payment-provider2.js";const ScCheckoutRazorpayPaymentProvider=ScCheckoutRazorpayPaymentProvider$1,defineCustomElement=defineCustomElement$1;export{ScCheckoutRazorpayPaymentProvider,defineCustomElement};

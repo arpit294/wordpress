@@ -1,0 +1,168 @@
+.tooltip {
+  position: relative;
+}
+.tooltip--has-width .tooltip-text {
+  white-space: normal;
+  min-width: var(--sc-tooltip-width);
+  max-width: var(--sc-tooltip-width);
+}
+
+.tooltip-text {
+  position: fixed;
+  background: var(--sc-color-gray-900);
+  border-radius: var(--sc-border-radius-small);
+  padding: var(--sc-spacing-small);
+  font-family: var(--sc-input-font-family);
+  font-size: var(--sc-input-font-size-small);
+  white-space: nowrap;
+  line-height: 1.2;
+  color: var(--sc-color-white);
+  z-index: 99999;
+}
+.tooltip-text:after {
+  content: "";
+  position: absolute;
+  height: 0;
+  width: 0;
+  border: 7px solid transparent;
+}
+
+.tooltip--top .tooltip-text:after {
+  top: calc(100% - 1px);
+  left: 50%;
+  transform: translateX(-50%);
+  border-top-color: var(--sc-color-gray-900);
+}
+
+.tooltip--bottom .tooltip-text:after {
+  bottom: calc(100% - 1px);
+  left: 50%;
+  transform: translateX(-50%);
+  border-bottom-color: var(--sc-color-gray-900);
+}
+
+.tooltip--left .tooltip-text:after {
+  left: calc(100% - 1px);
+  top: 50%;
+  transform: translateY(-50%);
+  border-left-color: var(--sc-color-gray-900);
+}
+
+.tooltip--right .tooltip-text:after {
+  right: calc(100% - 1px);
+  top: 50%;
+  transform: translateY(-50%);
+  border-right-color: var(--sc-color-gray-900);
+}
+
+.tooltip--primary .tooltip-text {
+  background: var(--sc-color-primary-500);
+}
+
+.tooltip--primary.tooltip--top .tooltip-text:after {
+  border-top-color: var(--sc-color-primary-500);
+}
+
+.tooltip--primary.tooltip--bottom .tooltip-text:after {
+  border-bottom-color: var(--sc-color-primary-500);
+}
+
+.tooltip--primary.tooltip--left .tooltip-text:after {
+  border-left-color: var(--sc-color-primary-500);
+}
+
+.tooltip--primary.tooltip--right .tooltip-text:after {
+  border-right-color: var(--sc-color-primary-500);
+}
+
+.tooltip--success .tooltip-text {
+  background: var(--sc-color-success-500);
+}
+
+.tooltip--success.tooltip--top .tooltip-text:after {
+  border-top-color: var(--sc-color-success-500);
+}
+
+.tooltip--success.tooltip--bottom .tooltip-text:after {
+  border-bottom-color: var(--sc-color-success-500);
+}
+
+.tooltip--success.tooltip--left .tooltip-text:after {
+  border-left-color: var(--sc-color-success-500);
+}
+
+.tooltip--success.tooltip--right .tooltip-text:after {
+  border-right-color: var(--sc-color-success-500);
+}
+
+.tooltip--info .tooltip-text {
+  background: var(--sc-color-info-500);
+}
+
+.tooltip--info.tooltip--top .tooltip-text:after {
+  border-top-color: var(--sc-color-info-500);
+}
+
+.tooltip--info.tooltip--bottom .tooltip-text:after {
+  border-bottom-color: var(--sc-color-info-500);
+}
+
+.tooltip--info.tooltip--left .tooltip-text:after {
+  border-left-color: var(--sc-color-info-500);
+}
+
+.tooltip--info.tooltip--right .tooltip-text:after {
+  border-right-color: var(--sc-color-info-500);
+}
+
+.tooltip--warning .tooltip-text {
+  background: var(--sc-color-warning-500);
+}
+
+.tooltip--warning.tooltip--top .tooltip-text:after {
+  border-top-color: var(--sc-color-warning-500);
+}
+
+.tooltip--warning.tooltip--bottom .tooltip-text:after {
+  border-bottom-color: var(--sc-color-warning-500);
+}
+
+.tooltip--warning.tooltip--left .tooltip-text:after {
+  border-left-color: var(--sc-color-warning-500);
+}
+
+.tooltip--warning.tooltip--right .tooltip-text:after {
+  border-right-color: var(--sc-color-warning-500);
+}
+
+.tooltip--danger .tooltip-text {
+  background: var(--sc-color-danger-500);
+}
+
+.tooltip--danger.tooltip--top .tooltip-text:after {
+  border-top-color: var(--sc-color-danger-500);
+}
+
+.tooltip--danger.tooltip--bottom .tooltip-text:after {
+  border-bottom-color: var(--sc-color-danger-500);
+}
+
+.tooltip--danger.tooltip--left .tooltip-text:after {
+  border-left-color: var(--sc-color-danger-500);
+}
+
+.tooltip--danger.tooltip--right .tooltip-text:after {
+  border-right-color: var(--sc-color-danger-500);
+}
+
+.tooltip--dark .tooltip-text {
+  background: #1e1e1e;
+  color: #ffffff;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06);
+}
+.tooltip--dark .tooltip-text:after {
+  display: none;
+}

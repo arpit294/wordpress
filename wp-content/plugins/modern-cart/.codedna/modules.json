@@ -1,0 +1,31 @@
+{
+  "modules": [
+    {
+      "id": "admin-core",
+      "path": "admin-core",
+      "claude": "admin-core/CLAUDE.md",
+      "architecture": "admin-core/architecture.md",
+      "language": "ts",
+      "confidence": "medium",
+      "reason": "source-cluster"
+    },
+    {
+      "id": "inc",
+      "path": "inc",
+      "claude": "inc/CLAUDE.md",
+      "architecture": "inc/architecture.md",
+      "language": "php",
+      "confidence": "medium",
+      "reason": "source-cluster"
+    },
+    {
+      "id": "templates",
+      "path": "templates",
+      "claude": "templates/CLAUDE.md",
+      "architecture": "templates/architecture.md",
+      "language": "php",
+      "confidence": "medium",
+      "reason": "source-cluster"
+    }
+  ]
+}

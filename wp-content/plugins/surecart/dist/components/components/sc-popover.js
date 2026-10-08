@@ -1,0 +1,1 @@
+import{S as ScPopover$1,d as defineCustomElement$1}from"./sc-popover2.js";const ScPopover=ScPopover$1,defineCustomElement=defineCustomElement$1;export{ScPopover,defineCustomElement};

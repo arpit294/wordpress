@@ -1,0 +1,1 @@
+"use strict";function getMaxStockQuantity(t,l){var i;return(null==t?void 0:t.purchase_limit)?null==t?void 0:t.purchase_limit:(l&&null!==(i=l.has_unlimited_stock)&&void 0!==i?i:null==t?void 0:t.has_unlimited_stock)?null:l?null==l?void 0:l.available_stock:null==t?void 0:t.available_stock}exports.getMaxStockQuantity=getMaxStockQuantity;

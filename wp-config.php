@@ -20,13 +20,13 @@
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'word' );
+define( 'DB_NAME', 'amarkot' );
 
 /** Database username */
-define( 'DB_USER', 'arpit' );
+define( 'DB_USER', 'root' );
 
 /** Database password */
-define( 'DB_PASSWORD', '123456' );
+define( 'DB_PASSWORD', '' );
 
 /** Database hostname */
 define( 'DB_HOST', 'localhost' );
@@ -92,6 +92,7 @@ define( 'WP_DEBUG', false );
 define( 'WP_MEMORY_LIMIT', '512M' );
 define( 'WP_MAX_MEMORY_LIMIT', '512M' );
 
+define( 'SURECART_ENCRYPTION_KEY', 'I|>[8h/yAnZwUfT:q~@=+YsmowVYF1I{Tqzk%)JA$$?*f zs|%V+EkFkOuFY$oQ&' );
 /* That's all, stop editing! Happy publishing. */
 
 /** Absolute path to the WordPress directory. */

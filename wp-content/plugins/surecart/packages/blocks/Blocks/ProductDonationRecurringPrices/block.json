@@ -1,0 +1,47 @@
+{
+	"apiVersion": 3,
+	"name": "surecart/product-donation-price",
+	"title": "Recurring Prices",
+	"description": "Displays an option to select between recurring prices.",
+	"category": "surecart",
+	"ancestor": ["surecart/product-donation-prices"],
+	"keywords": ["donation", "ad hoc", "recurring", "amount"],
+	"textdomain": "surecart",
+	"usesContext": ["surecart/product-donation/product_id"],
+	"supports": {
+		"reusable": false,
+		"html": false
+	},
+	"attributes": {
+		"label": {
+			"type": "string"
+		},
+		"recurring": {
+			"type": "boolean",
+			"default": true
+		}
+	},
+	"variations": [
+		{
+			"name": "recurring",
+			"title": "Recurring",
+			"description": "Add a button to add the product to the cart.",
+			"attributes": {
+				"recurring": true
+			},
+			"isDefault": true,
+			"isActive": ["recurring"],
+			"scope": ["inserter", "block", "transform"]
+		},
+		{
+			"name": "non_recurring",
+			"title": "Non Recurring",
+			"description": "Add a button to add the product to the cart.",
+			"attributes": {
+				"recurring": false
+			},
+			"isActive": ["recurring"],
+			"scope": ["inserter", "block", "transform"]
+		}
+	]
+}

@@ -1,0 +1,1 @@
+import{S as ScCustomerPhone$1,d as defineCustomElement$1}from"./sc-customer-phone2.js";const ScCustomerPhone=ScCustomerPhone$1,defineCustomElement=defineCustomElement$1;export{ScCustomerPhone,defineCustomElement};

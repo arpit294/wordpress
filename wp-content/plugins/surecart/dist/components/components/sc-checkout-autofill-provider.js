@@ -1,0 +1,1 @@
+import{S as ScCheckoutAutofillProvider$1,d as defineCustomElement$1}from"./sc-checkout-autofill-provider2.js";const ScCheckoutAutofillProvider=ScCheckoutAutofillProvider$1,defineCustomElement=defineCustomElement$1;export{ScCheckoutAutofillProvider,defineCustomElement};
