@@ -1,0 +1,1 @@
+export const flush=()=>new Promise((e=>setTimeout(e,0)));export const makePaypal=()=>{const e=[];return{FUNDING:{PAYPAL:"paypal",CARD:"card"},Buttons:jest.fn((t=>{const s={config:t,isEligible:()=>!0,render:jest.fn((()=>Promise.resolve()))};return e.push(s),s})),buttons:e}};

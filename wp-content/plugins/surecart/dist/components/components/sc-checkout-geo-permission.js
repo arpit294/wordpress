@@ -1,0 +1,1 @@
+import{S as ScCheckoutGeoPermission$1,d as defineCustomElement$1}from"./sc-checkout-geo-permission2.js";const ScCheckoutGeoPermission=ScCheckoutGeoPermission$1,defineCustomElement=defineCustomElement$1;export{ScCheckoutGeoPermission,defineCustomElement};

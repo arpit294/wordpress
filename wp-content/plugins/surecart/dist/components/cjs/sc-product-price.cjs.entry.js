@@ -1,0 +1,75 @@
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+const index = require('./index-be4abba1.js');
+const watchers = require('./watchers-24b78a31.js');
+require('./facebook-3c183c7a.js');
+const store = require('./store-3ddee299.js');
+require('./index-c3de642f.js');
+require('./google-15c85d5e.js');
+require('./currency-b438c76d.js');
+require('./google-8dbad1a6.js');
+require('./utils-f5ea3c23.js');
+require('./util-a15c420c.js');
+require('./index-fb76df07.js');
+require('./getters-e8c6cb31.js');
+require('./mutations-8b2b6c99.js');
+require('./fetch-5e8dc1d5.js');
+require('./index-7ced8198.js');
+require('./add-query-args-49dcb630.js');
+require('./remove-query-args-b57e8cd3.js');
+require('./mutations-d5d6ddf1.js');
+
+const scProductPriceCss = ":host{display:block}";
+const ScProductPriceStyle0 = scProductPriceCss;
+
+const ScProductPrice = class {
+    constructor(hostRef) {
+        index.registerInstance(this, hostRef);
+        this.prices = undefined;
+        this.saleText = undefined;
+        this.productId = undefined;
+    }
+    renderRange() {
+        var _a;
+        return (_a = watchers.state[this.productId]) === null || _a === void 0 ? void 0 : _a.range_display_amount;
+    }
+    renderVariantPrice(selectedVariant) {
+        var _a, _b;
+        const variant = (_b = (_a = watchers.state[this.productId]) === null || _a === void 0 ? void 0 : _a.variants) === null || _b === void 0 ? void 0 : _b.find(variant => (variant === null || variant === void 0 ? void 0 : variant.id) === (selectedVariant === null || selectedVariant === void 0 ? void 0 : selectedVariant.id));
+        return this.renderPrice(watchers.state[this.productId].selectedPrice, variant);
+    }
+    renderPrice(price, variant = null) {
+        var _a, _b, _c, _d, _e, _f;
+        const originalAmount = (_b = (_a = variant === null || variant === void 0 ? void 0 : variant.display_amount) !== null && _a !== void 0 ? _a : price === null || price === void 0 ? void 0 : price.display_amount) !== null && _b !== void 0 ? _b : '';
+        // maybe change for upsells.
+        const amount = ((_c = store.state === null || store.state === void 0 ? void 0 : store.state.line_item) === null || _c === void 0 ? void 0 : _c.subtotal_with_upsell_discount_amount) || (price === null || price === void 0 ? void 0 : price.amount);
+        const upsellDisplayAmount = (_d = store.state === null || store.state === void 0 ? void 0 : store.state.line_item) === null || _d === void 0 ? void 0 : _d.subtotal_with_upsell_discount_display_amount;
+        const displayAmount = upsellDisplayAmount ? upsellDisplayAmount : originalAmount;
+        const scratchAmount = ((_e = store.state === null || store.state === void 0 ? void 0 : store.state.line_item) === null || _e === void 0 ? void 0 : _e.subtotal_amount) || (price === null || price === void 0 ? void 0 : price.scratch_amount);
+        const upsellScratchDisplayAmount = (_f = store.state === null || store.state === void 0 ? void 0 : store.state.line_item) === null || _f === void 0 ? void 0 : _f.subtotal_display_amount;
+        const scratchDisplayAmount = upsellScratchDisplayAmount ? upsellScratchDisplayAmount : price === null || price === void 0 ? void 0 : price.scratch_display_amount;
+        return (index.h("sc-price", { currency: price === null || price === void 0 ? void 0 : price.currency, amount: amount, displayAmount: displayAmount, scratchAmount: scratchAmount, scratchDisplayAmount: scratchDisplayAmount, saleText: this.saleText, adHoc: price === null || price === void 0 ? void 0 : price.ad_hoc, trialDurationDays: price === null || price === void 0 ? void 0 : price.trial_duration_days, setupFeeText: price === null || price === void 0 ? void 0 : price.setup_fee_text, setupFeeAmount: (price === null || price === void 0 ? void 0 : price.setup_fee_enabled) ? price === null || price === void 0 ? void 0 : price.setup_fee_amount : null, setupFeeName: (price === null || price === void 0 ? void 0 : price.setup_fee_enabled) ? price === null || price === void 0 ? void 0 : price.setup_fee_name : null, recurringPeriodCount: price === null || price === void 0 ? void 0 : price.recurring_period_count, recurringInterval: price === null || price === void 0 ? void 0 : price.recurring_interval, recurringIntervalCount: price === null || price === void 0 ? void 0 : price.recurring_interval_count }));
+    }
+    render() {
+        return (index.h(index.Host, { key: '6c9dc5c45ee08793918387dc302f94c9994cfddf', role: "paragraph" }, (() => {
+            var _a, _b, _c, _d, _e;
+            if ((_a = watchers.state[this.productId]) === null || _a === void 0 ? void 0 : _a.selectedVariant) {
+                return this.renderVariantPrice((_b = watchers.state[this.productId]) === null || _b === void 0 ? void 0 : _b.selectedVariant);
+            }
+            if ((_c = watchers.state[this.productId]) === null || _c === void 0 ? void 0 : _c.selectedPrice) {
+                return this.renderPrice(watchers.state[this.productId].selectedPrice);
+            }
+            if ((_e = (_d = watchers.state[this.productId]) === null || _d === void 0 ? void 0 : _d.prices) === null || _e === void 0 ? void 0 : _e.length) {
+                return this.renderRange();
+            }
+            return index.h("slot", null);
+        })()));
+    }
+};
+ScProductPrice.style = ScProductPriceStyle0;
+
+exports.sc_product_price = ScProductPrice;
+
+//# sourceMappingURL=sc-product-price.cjs.entry.js.map

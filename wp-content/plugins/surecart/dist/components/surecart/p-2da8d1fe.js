@@ -1,0 +1,1 @@
+function i(l,i){var u;return(null==l?void 0:l.purchase_limit)?null==l?void 0:l.purchase_limit:(i&&null!==(u=i.has_unlimited_stock)&&void 0!==u?u:null==l?void 0:l.has_unlimited_stock)?null:i?null==i?void 0:i.available_stock:null==l?void 0:l.available_stock}export{i as g};

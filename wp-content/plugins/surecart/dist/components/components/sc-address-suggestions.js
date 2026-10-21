@@ -1,0 +1,1 @@
+import{S as ScAddressSuggestions$1,d as defineCustomElement$1}from"./sc-address-suggestions2.js";const ScAddressSuggestions=ScAddressSuggestions$1,defineCustomElement=defineCustomElement$1;export{ScAddressSuggestions,defineCustomElement};

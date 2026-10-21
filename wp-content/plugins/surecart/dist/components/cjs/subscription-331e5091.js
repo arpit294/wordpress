@@ -1,0 +1,1 @@
+"use strict";const isPauseScheduled=e=>!!(null==e?void 0:e.cancel_at_period_end)&&!!(null==e?void 0:e.current_period_end_at)&&"canceled"!==(null==e?void 0:e.status)&&!!(null==e?void 0:e.restore_at),isPaused=e=>"canceled"===(null==e?void 0:e.status)&&!!(null==e?void 0:e.restore_at);exports.isPauseScheduled=isPauseScheduled,exports.isPaused=isPaused;

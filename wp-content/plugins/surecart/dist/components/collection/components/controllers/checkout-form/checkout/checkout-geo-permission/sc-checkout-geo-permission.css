@@ -1,0 +1,20 @@
+:host {
+  display: block;
+}
+
+.geo-permission {
+  --body-spacing: var(--sc-spacing-x-large);
+  --width: 460px;
+}
+.geo-permission__content {
+  line-height: 1.5;
+}
+.geo-permission__content p {
+  margin: 0 0 var(--sc-spacing-small);
+}
+.geo-permission__content p:first-child {
+  margin-top: 0;
+}
+.geo-permission__content p:last-child {
+  margin-bottom: 0;
+}

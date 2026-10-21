@@ -1,0 +1,163 @@
+<?php
+
+namespace SureCart\WordPress\Assets;
+
+/**
+ * Handles the component theme.
+ */
+class StylesService {
+	/**
+	 * Holds the service container
+	 *
+	 * @var \Pimple\Container
+	 */
+	protected $container;
+
+	/**
+	 * Make sure we change the script loader tag for esm loading.
+	 *
+	 * @param  \Pimple\Container $container Service Container.
+	 */
+	public function __construct( $container ) {
+		$this->container = $container;
+	}
+
+	/**
+	 * Register the default theme.
+	 *
+	 * @return void
+	 */
+	public function register() {
+		wp_register_style(
+			'surecart-themes-default',
+			trailingslashit( \SureCart::core()->assets()->getUrl() ) . 'dist/components/surecart/surecart.css',
+			array(),
+			filemtime( trailingslashit( $this->container[ SURECART_CONFIG_KEY ]['app_core']['path'] ) . 'dist/components/surecart/surecart.css' ),
+		);
+		$brand   = \SureCart::account()->brand;
+		$color   = preg_replace( '/[^a-fA-F0-9]/', '', \SureCart::theme()->brandColor() );
+		$heading = preg_replace( '/[^a-fA-F0-9]/', '', $brand->heading ?? '000' );
+
+		$style = file_get_contents( plugin_dir_path( SURECART_PLUGIN_FILE ) . 'dist/blocks/cloak.css' );
+
+		$style .= ':root {';
+		$style .= '--sc-color-primary-500: #' . $color . ';';
+		$style .= '--sc-focus-ring-color-primary: #' . $color . ';';
+		$style .= '--sc-input-border-color-focus: #' . $color . ';';
+		$style .= '--sc-color-gray-900: #' . $heading . ';';
+		$style .= '--sc-color-primary-text: #' . \SureCart::utility()->color()->calculateForegroundColor( $color ) . ';';
+		$style .= '--wp--preset--color--surecart: #' . $color . ';';
+		$style .= '}';
+
+		wp_add_inline_style(
+			'surecart-themes-default',
+			$style
+		);
+
+		// blocks-next.
+		wp_add_inline_style(
+			'surecart-theme-base',
+			$style
+		);
+	}
+
+	/**
+	 * Enqueue the front styles.
+	 *
+	 * @return void
+	 */
+	public function enqueueFront() {
+		// make sure it is registered.
+		$this->register();
+		// enqueue it.
+		wp_enqueue_style( 'surecart-themes-default' );
+	}
+
+	/**
+	 * Enqueue the editor styles.
+	 *
+	 * @return void
+	 */
+	public function enqueueEditor() {
+		// make sure it is registered.
+		$this->register();
+		// enqueue it.
+		wp_enqueue_style( 'surecart-themes-default' );
+	}
+
+	/**
+	 * Add inline brand styles to theme.
+	 *
+	 * @param string $handle The handle to add the styles to.
+	 *
+	 * @return void
+	 */
+	public function addInlineAdminColors( $handle ) {
+		ob_start();
+		?>
+		:root:root {
+			--wp-admin-theme-color: #007cba;
+			--wp-admin-theme-color-darker-10: #1f63a0;
+			--wp-admin-theme-color-darker-20: #1a5080;
+			--wp-components-color-accent: var(--wp-admin-theme-color);
+			--wp-components-color-accent-darker-10: var(--wp-admin-theme-color-darker-10);
+			--wp-components-color-accent-darker-20: var(--wp-admin-theme-color-darker-20);
+			--sc-color-primary-500: var(--wp-admin-theme-color);
+			--sc-focus-ring-color-primary: var(
+				--wp-admin-theme-color
+			);
+			--sc-input-border-color-focus: var(
+				--wp-admin-theme-color
+			);
+		}
+		<?php
+
+		wp_add_inline_style(
+			$handle,
+			ob_get_clean()
+		);
+	}
+
+	/**
+	 * Add inline brand styles to theme.
+	 *
+	 * @param string $handle The handle to add the styles to.
+	 *
+	 * @return void
+	 */
+	public function addInlineBrandColors( $handle ) {
+		ob_start();
+		?>
+		/* Scoped to the brand-styled screens (dashboard, learn, settings,
+			onboarding) via a body class the unified shell can toggle on
+			client-side swaps — unscoped, the remap leaks brand colors into
+			the neutral list screens sharing the document. */
+		body.sc-brand-ui {
+			--sc-color-primary-500: var(--sc-color-brand-primary);
+			--sc-focus-ring-color-primary: var(--sc-color-brand-primary);
+			--sc-input-border-color-focus: var(--sc-color-brand-primary);
+			--sc-color-gray-900: var(--sc-color-brand-heading);
+			--sc-color-gray-800: var(--sc-color-brand-text);
+			--sc-tab-active-color: var(--sc-color-brand-primary);
+			--sc-tab-active-background: transparent;
+			--sc-tag-default-background-color: var(--sc-color-brand-main-background);
+			--sc-tag-default-border-color: var(--sc-color-brand-stroke);
+			--sc-tag-default-color: var(--sc-color-brand-body);
+			--sc-stacked-list-row-hover-color: var(--sc-color-brand-main-background);
+			--sc-color-primary-text: white;
+		}
+
+		body.sc-brand-ui sc-tab:not([active]):not(:hover) sc-icon {
+			color: var(--sc-color-gray-500);
+		}
+		body.sc-brand-ui sc-tab::part(base) {
+			font-weight: 400;
+		}
+		<?php
+
+		wp_add_inline_style(
+			$handle,
+			ob_get_clean()
+		);
+	}
+}

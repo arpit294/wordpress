@@ -1,0 +1,32 @@
+sc-test-mode-info .sc-test-mode-info-content ol {
+  padding-left: 1em;
+  margin: 0;
+  font-size: 12px;
+}
+sc-test-mode-info .sc-test-mode-info-content ol img {
+  width: 320px;
+  margin-top: 12px;
+}
+sc-test-mode-info .sc-test-mode-info-content ul {
+  padding-left: 1em;
+}
+sc-test-mode-info .sc-test-mode-info-footer {
+  display: flex;
+  justify-content: space-between;
+}
+sc-test-mode-info .sc-test-mode-info-footer sc-button > sc-icon {
+  margin-left: 4px;
+}
+sc-test-mode-info .sc-test-mode-info-footer > span {
+  font-size: var(--sc-button-font-size-small);
+  align-content: center;
+  opacity: 0.75;
+}
+sc-test-mode-info sc-popover {
+  --panel-width: 25em;
+}
+
+#wpadminbar #wp-admin-bar-sc_change_checkout_mode > .ab-item:before {
+  content: "\f186"/"";
+  top: 2px;
+}

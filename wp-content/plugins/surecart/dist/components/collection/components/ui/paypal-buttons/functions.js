@@ -1,0 +1,1 @@
+export const getScriptLoadParams=({clientId:e,reusable:t,merchantId:c,currency:r="usd",merchantInitiated:a,locale:n=""})=>{const i="string"==typeof n&&n.includes("-");return{"client-id":e.replace(/ /g,""),...!t||a?{"merchant-id":c.replace(/ /g,"")}:{},...i?{locale:n.replace(/-/g,"_")}:{},commit:!1,intent:t?"tokenize":"capture",vault:!0,currency:r?r.toUpperCase():"USD"}};

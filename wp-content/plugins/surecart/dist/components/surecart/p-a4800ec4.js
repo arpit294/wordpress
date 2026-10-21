@@ -1,0 +1,1 @@
+const o=e=>!!(null==e?void 0:e.cancel_at_period_end)&&!!(null==e?void 0:e.current_period_end_at)&&"canceled"!==(null==e?void 0:e.status)&&!!(null==e?void 0:e.restore_at),d=e=>"canceled"===(null==e?void 0:e.status)&&!!(null==e?void 0:e.restore_at);export{d as a,o as i};
